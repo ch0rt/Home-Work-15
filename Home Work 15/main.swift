@@ -46,26 +46,26 @@ struct Rect {
     var origin: Point
     var weight: Double
     var height: Double
-    var center: Point
+//    var center: Point
     
     init(origin: Point, weight: Double, height: Double) {
         self.origin = origin
         self.weight = weight
         self.height = height
-       self.center = Point(x: 0, y: 0)
+//       self.center = Point(x: 0, y: 0)
     }
     
     init(center: Point, weight: Double, height: Double){
         
         self.init(origin: Point(PointX: 0, PointY: 0), weight: weight, height: height)
-        self.center = center
+//        self.center = center
     }
  
     init(weight: Double, height: Double) {
 //        self.init(origin: Point(x: 0, y: 0), weight: weight, height: height)
         self.weight = weight
         self.height = height
-        self.center = Point(x: 0, y: 0 )
+//        self.center = Point(x: 0, y: 0 )
         self.origin = Point(x: 0, y: 0)
     }
     
