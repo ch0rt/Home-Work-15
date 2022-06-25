@@ -19,14 +19,14 @@ import Foundation
 
 
 struct Point {
-    var x: Int
-    var y: Int
+    var x: Double
+    var y: Double
     
-    init(x: Int, y: Int ) {
+    init(x: Double, y: Double ) {
         self.x = x
         self.y = y
     }
-    init(PointX: Int, PointY: Int) {
+    init(PointX: Double, PointY: Double) {
         self.x = abs(PointX)
         self.y = abs(PointY)
   }
@@ -42,70 +42,37 @@ let exmpPoint = Point(x: 5, y: -8)
 //- init(center: Point, weight: Double, height: Double)
 //- init(weight: Double, height: Double) -> Point.x = 0 Point.y = 0
 
+
+
 struct Rect {
     var origin: Point
     var weight: Double
     var height: Double
-//    var center: Point
-    
+
     init(origin: Point, weight: Double, height: Double) {
         self.origin = origin
         self.weight = weight
         self.height = height
-//       self.center = Point(x: 0, y: 0)
     }
-    
+
     init(center: Point, weight: Double, height: Double){
-        
-        self.init(origin: Point(PointX: 0, PointY: 0), weight: weight, height: height)
-//        self.center = center
+        let originx = center.x - weight / 2
+        let originY = center.y - height / 2
+        self.init(origin: Point(x: originx, y: originY), weight: weight, height: height)
     }
- 
+
     init(weight: Double, height: Double) {
-//        self.init(origin: Point(x: 0, y: 0), weight: weight, height: height)
         self.weight = weight
         self.height = height
-//        self.center = Point(x: 0, y: 0 )
         self.origin = Point(x: 0, y: 0)
     }
-    
+
 }
 let obj = Rect(center: Point(x: 0, y: 0), weight: 0, height: 0)
 
 let object = Rect(origin: Point(x: 2, y: 3), weight: 4, height: 5)
 
 let noCenter = Rect(weight: 3, height: 4)
-
-
-//struct Rect {
-//    var origin: Point
-//    var weight: Double
-//    var height: Double
-//
-//    init(origin: Point, weight: Double, height: Double) {
-//        self.origin = origin
-//        self.weight = weight
-//        self.height = height
-//    }
-//
-//    init(center: Point, weight: Double, height: Double){
-//        let originx = center.x - weight / 2
-//        let originY = center.y - height / 2
-//        self.init(origin: Point(x: originx, y: originY), weight: weight, height: height)
-//    }
-//
-//    init(weight: Double, height: Double) {
-//        self.weight = weight
-//        self.height = height
-//        self.origin = Point(x: 0, y: 0)
-//    }
-//
-//}
-//let obj = Rect(center: Point(x: 0, y: 0), weight: 0, height: 0)
-//
-//let object = Rect(origin: Point(x: 2, y: 3), weight: 4, height: 5)
-//
-//let noCenter = Rect(weight: 3, height: 4)
 
 
 //3. Ստեղծել struct Color (հետևյալ փրոփրտիներով red, green, blue)
